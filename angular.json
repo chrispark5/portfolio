@@ -13,7 +13,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "baseHref": "/chris-park-portfolio/",
             "outputPath": "dist/chris-park-portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
