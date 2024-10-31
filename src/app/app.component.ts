@@ -11,5 +11,5 @@ import { SkillsComponent } from './skills/skills.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'chris-park-portfolio';
+  title = 'park-portfolio';
 }
