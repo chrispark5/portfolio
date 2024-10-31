@@ -77,7 +77,7 @@ nav a.active {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #f8f9fa;
+  background: #000000;
   margin-top: auto;
 }
 
@@ -93,6 +93,7 @@ html {
 
 .project-links a {
   text-decoration: none;
+  color: white;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -283,8 +284,8 @@ app-root {
 
 .project-image img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 
@@ -537,13 +538,6 @@ h3 {
   flex: 0 0 50%;
   overflow: hidden;
   border-radius: 4px;
-}
-
-.project-image img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
 .project-content {
