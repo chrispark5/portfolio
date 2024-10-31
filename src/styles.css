@@ -1,1 +1,576 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Reset default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure HTML and Body take full height */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-primary);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px
+  );
+  background-size: 100% 2px;
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding-top: 60px; /* Height of nav */
+  min-height: calc(100vh - 60px);
+  flex: 1;
+}
+
+/* Navigation Styles */
+nav {
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid #2d3748;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+nav a.active {
+  color: var(--accent);
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  margin-top: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-links a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+:root {
+  /* Main colors */
+  --bg-primary: #0f172a; /* Dark blue-gray background */
+  --bg-secondary: #1e293b; /* Slightly lighter blue-gray for cards/sections */
+  --text-primary: #ffffff; /* Pure white for main text */
+  --text-secondary: #e2e8f0; /* Slightly dimmed white for secondary text */
+  --accent: #38bdf8; /* Keeping the blue accent for interactive elements */
+  --accent-hover: #7dd3fc; /* Lighter blue for hover states */
+}
+
+/* Base text color */
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div {
+  color: var(--text-primary);
+}
+
+/* Navigation links */
+nav a {
+  color: var(--text-primary);
+}
+
+/* Project cards text */
+.project-card p {
+  color: var(--text-secondary);
+}
+
+/* Keep accent color for interactive elements */
+a:hover {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+.section-padding {
+  background: linear-gradient(
+    to bottom,
+    var(--bg-primary),
+    var(--bg-secondary)
+  );
+}
+
+.skills-category {
+  margin: 2rem 0;
+}
+
+.skills-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Custom scrollbar for Webkit browsers */
+.skills-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.skills-scroll::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 3px;
+}
+
+.skills-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+.skill-item {
+  background: var(--bg-secondary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+/* Remove or comment out these card-related styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.project-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.project-card h3 {
+  margin: 1rem 0;
+}
+
+/* Light mode colors */
+:root[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --accent: #0284c7;
+  --accent-hover: #0369a1;
+}
+
+/* Dark mode colors */
+:root[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+}
+
+/* If you're using Angular's app-root */
+app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.projects-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem auto;
+}
+
+.project {
+  display: flex;
+  gap: 2rem;
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-image {
+  flex: 0 0 700px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-content p {
+  margin-bottom: 2rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.tech-stack span {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tech-stack span:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Section spacing */
+section {
+  padding: 5rem 0;
+}
+
+/* Container width and padding */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header styles */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Skills section spacing */
+.skills-category {
+  margin: 3rem 0;
+}
+
+.skills-category h3 {
+  margin-bottom: 1.5rem;
+}
+
+/* Projects section spacing */
+.projects-stack {
+  margin: 3rem auto;
+}
+
+.project {
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+}
+
+.project p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+/* About section spacing */
+#about p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact section spacing */
+#contact {
+  padding-bottom: 8rem; /* Extra padding before footer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .project {
+    flex-direction: column;
+  }
+
+  .project-image {
+    flex: 0 0 auto;
+  }
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.current-focus {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.current-focus h3 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.current-focus ul {
+  list-style: none;
+  padding: 0;
+}
+
+.current-focus li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Add some hover effect to the focus items */
+.current-focus li:hover {
+  transform: translateX(10px);
+  transition: transform 0.3s ease;
+  color: var(--accent);
+}
+
+/* Update container for skills section */
+#skills .container {
+  max-width: 100%;
+  padding: 0 2rem;
+}
+
+.skills-category {
+  margin: 3rem 0;
+}
+
+.skills-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+
+  /* Smooth scroll behavior */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+.skills-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Add gradient fade effect on the edges */
+.skills-category {
+  position: relative;
+}
+
+.skills-category::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  background: linear-gradient(to left, var(--bg-primary) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Update container for projects */
+#projects {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#projects .container {
+  width: 90%;
+  margin: 0 auto;
+}
+.projects-stack {
+  max-width: 90%; /* Takes 90% of container width */
+  margin: 0 auto;
+}
+.project {
+  display: flex;
+  gap: 2rem;
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.project-image {
+  flex: 0 0 50%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Adjust spacing for content elements */
+.project h3 {
+  margin: 0;
+}
+
+.project p {
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .project {
+    flex-direction: column;
+  }
+
+  .project-image {
+    flex: 0 0 auto;
+  }
+}
+
+.project-content h3 {
+  margin-bottom: 1rem;
+}

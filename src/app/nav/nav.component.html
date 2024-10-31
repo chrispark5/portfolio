@@ -1,0 +1,37 @@
+<nav>
+  <!-- Name on the left -->
+  <div class="nav-brand">
+    <a href="#home">Chris Park</a>
+  </div>
+
+  <!-- Main nav links in center -->
+  <div class="nav-center">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+  </div>
+
+  <!-- Social links on right -->
+  <div class="social-links">
+    <a href="mailto:your.email@example.com" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a
+      href="https://linkedin.com/in/your-profile"
+      target="_blank"
+      title="LinkedIn"
+    >
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/your-username" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <button (click)="toggleTheme()" class="theme-toggle">
+      <i
+        class="fas"
+        [class.fa-sun]="isDarkMode"
+        [class.fa-moon]="!isDarkMode"
+      ></i>
+    </button>
+  </div>
+</nav>
