@@ -6,13 +6,6 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Reset default spacing */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Ensure HTML and Body take full height */
 html,
 body {
@@ -95,7 +88,6 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
-  /* background-size: 100% 2px; */
   color: var(--text-primary);
   min-height: 100vh;
   display: flex;
@@ -114,7 +106,6 @@ nav {
   width: 100%;
   height: 60px;
   background-color: transparent;
-  /* border-bottom: 1px solid #2d3748; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -279,6 +270,7 @@ p {
   transform: translateY(-2px);
   transition: all 0.3s ease;
 }
+
 /* Remove or comment out these card-related styles */
 .projects-grid {
   display: grid;
